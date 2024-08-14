@@ -29,7 +29,7 @@ public class PropertyServiceImpl implements PropertyService {
     }
 
     @Override
-    public String createProperty(Property property) {
+    public String createProperty(Property property) throws IllegalArgumentException {
 
 
         if (property.getTitledeed() != null && property.getTitledeed().getId() != null) {

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("(/image")
+@RequestMapping("/image")
 public class ImageController {
 
     ImageService imageService;

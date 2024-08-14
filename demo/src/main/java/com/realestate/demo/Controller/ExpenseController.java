@@ -26,7 +26,7 @@ public class ExpenseController {
         return expenseService.getAllExpense();
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public String createExpense(@RequestBody Expense expense)
     {
         expenseService.createExpense(expense);

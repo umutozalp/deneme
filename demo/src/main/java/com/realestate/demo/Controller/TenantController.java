@@ -1,7 +1,5 @@
 package com.realestate.demo.Controller;
-
 import com.realestate.demo.Entity.Tenant;
-import com.realestate.demo.Entity.User;
 import com.realestate.demo.Repository.TenantRepository;
 import com.realestate.demo.Service.TenantService;
 import org.springframework.web.bind.annotation.*;

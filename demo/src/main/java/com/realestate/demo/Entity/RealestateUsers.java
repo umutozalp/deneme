@@ -13,7 +13,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class    User {
+public class  RealestateUsers {
 
 
     //@SequenceGenerator(name="seq_id",allocationSize=1)
@@ -22,13 +22,13 @@ public class    User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Integer Id;
+    private Integer id;
     @Column(name = "username")
-    private String Username;
+    private String username;
     @Column(name = "password")
-    private String Password;
+    private String password;
     @Column(name = "role")
-    private String Role;
+    private String role;
 
 
 }

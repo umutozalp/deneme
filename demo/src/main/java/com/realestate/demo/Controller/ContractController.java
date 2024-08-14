@@ -16,7 +16,7 @@ public class ContractController {
         this.contractService = contractService;
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/view/{id}")
     public Contract getContract(@PathVariable int id)
     {
       return contractService.getContract(id);
