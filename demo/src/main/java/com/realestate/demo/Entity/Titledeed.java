@@ -1,15 +1,8 @@
 package com.realestate.demo.Entity;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
-import org.antlr.v4.runtime.misc.NotNull;
-import org.hibernate.annotations.GeneratorType;
-
 import java.util.List;
-import java.util.Properties;
 
 @Entity
 @Getter

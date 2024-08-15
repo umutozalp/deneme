@@ -26,8 +26,8 @@ public class PropertyController {
     {
         return propertyService.getAllProperty();
     }
-    @PostMapping
 
+    @PostMapping()
     public Property createProperty(@RequestBody Property property)
     {
 

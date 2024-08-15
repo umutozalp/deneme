@@ -1,12 +1,14 @@
 package com.realestate.demo.Config;
 
 
+import com.realestate.demo.Service.RealestateUsersService;
 import com.realestate.demo.Service.RealestateUsersServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractAuthenticationFilterConfigurer;
@@ -22,16 +24,16 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-                .csrf(AbstractHttpConfigurer::disable)
+       return http
+                .csrf(httpSecurityCsrfConfigurer -> httpSecurityCsrfConfigurer.disable() )
                 .authorizeHttpRequests(authorize -> {
-                    authorize.requestMatchers("/contract").hasRole("LAWYER");
-                    authorize.requestMatchers("users/create").permitAll();
+                    authorize.requestMatchers("/contract/view/**","/contract/view").hasRole("LAWYER");
+                    authorize.requestMatchers("expense/create","/income/create").hasRole("ACCOUNTANT");
                     authorize.requestMatchers("/**").hasRole("ADMIN");
-                    authorize.requestMatchers("expense/create").hasRole("ACCOUNTANT");
                     authorize.anyRequest().authenticated();
-                }).formLogin(AbstractAuthenticationFilterConfigurer::permitAll);
-        return http.build();
+                }).formLogin(AbstractAuthenticationFilterConfigurer::permitAll)
+               .httpBasic(Customizer.withDefaults())
+               .build();
     }
 
     //Uygulamada kullanıcı kimlik doğrulaması için hangi servisi ve hangi password encoder'ı kullanacığını belirlemek amacıyla tanımlanır.

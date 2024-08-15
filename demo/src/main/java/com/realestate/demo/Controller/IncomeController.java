@@ -25,7 +25,7 @@ public class IncomeController {
     {
         return incomeService.getAllIncome();
     }
-    @PostMapping
+    @PostMapping("/create")
     public String createIncome(@RequestBody Income income)
     {
         incomeService.createIncome(income);

@@ -2,6 +2,7 @@
 //
 //import com.realestate.demo.Entity.RealestateUsers;
 //import com.realestate.demo.Repository.RealestateUsersRepository;
+//import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.security.core.userdetails.User;
 //import org.springframework.security.core.userdetails.UserDetails;
 //import org.springframework.security.core.userdetails.UserDetailsService;
@@ -13,12 +14,8 @@
 //@Service
 //public class userDetailsService implements UserDetailsService {
 //
-//    private final RealestateUsersServiceImpl realestateUsersServiceImpl;
+//    @Autowired
 //    RealestateUsersRepository realestateUsersRepository;
-//
-//    public userDetailsService(RealestateUsersServiceImpl realestateUsersServiceImpl) {
-//        this.realestateUsersServiceImpl = realestateUsersServiceImpl;
-//    }
 //
 //    //Username adında bir string değer alır ve bir istisna fırlatabilir.
 //    //Aldığı username'i realestateUsersRepository'de arar ve sonucu Optional olarak döner. Kullanıcı bulunduysa bunu userObj değişkenine atar ve

@@ -29,6 +29,4 @@ public class PropertyOwners {
     private String ownerphone;
     @Column(name = "ownerEmail")
     private String owneremail;
-
-
 }

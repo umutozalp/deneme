@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class RealestateUsersServiceImpl implements RealestateUsersService, UserDetailsService {
+public class RealestateUsersServiceImpl implements RealestateUsersService,UserDetailsService {
 
 
     RealestateUsersRepository realestateUsersRepository;
@@ -70,6 +70,8 @@ public class RealestateUsersServiceImpl implements RealestateUsersService, UserD
             throw new UsernameNotFoundException(username);
         }
     }
+    //  .roles metodu genelde bir dizi değerler bekler. Bu metod bir realestateUsers nesnesi alır ve rolünü konrol eder eğer rol yoksa otomatik olarak
+    // rolü USER olarak ayarlar. Eğer rol varsa da ve bu rol ADMIN,USER şeklinde de olabilir diye bunu split metodu ile bölerek atar.
     private String[] getRoles(RealestateUsers realestateUsers) {
         if (realestateUsers.getRole() == null) {
             return new String[]{"USER"};
@@ -77,5 +79,6 @@ public class RealestateUsersServiceImpl implements RealestateUsersService, UserD
 
     }
 
-    }
+
+}
 

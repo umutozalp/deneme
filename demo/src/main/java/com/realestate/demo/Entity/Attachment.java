@@ -1,5 +1,6 @@
 package com.realestate.demo.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,6 +23,7 @@ public class Attachment {
   private Integer id;
 
   @ManyToOne(cascade = CascadeType.ALL)
+  @JsonIgnore
   @JoinColumn(name="propertyId")
   private Property property;
 
